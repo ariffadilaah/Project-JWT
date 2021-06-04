@@ -9,11 +9,24 @@ exports.index = function(req,res){
 
 // menampilkan semua data mahasiswa
 exports.tampilsemuamahasiswa = function(req,res){
-    connection.query('SELECT * FROM aliansi', function(error, rows, fileds) {
+    connection.query('SELECT * FROM aliansi', function(error, rows, fields) {
         if(error){
-            connection.log(error);
+            console.log(error);
         }else {
-            response.ok(rows, res)
+            response.ok(rows, res);
         }
     });
+};
+
+//menampilkan semua data mahasiswa berdasarkan id
+exports.tampilberdasarkanid = function(req,res){
+    let id = req.params.id;
+    connection.query('SELECT * FROM aliansi WHERE id_mahasiswa =?', [id],
+        function(error, rows, fields){
+            if(error){
+                console.log(error);
+            }else{
+                response.ok(rows, res);
+            }
+        });
 };
