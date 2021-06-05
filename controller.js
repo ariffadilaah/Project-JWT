@@ -66,3 +66,16 @@ exports.ubahAliansi = function(req,res){
             }
         });
 };
+
+//menghapus data id
+exports.hapusAliansi = function(req,res){
+    var id = req.body.id_mahasiswa;
+    connection.query('DELETE FROM aliansi WHERE id_mahasiswa=?', [id],
+    function(error, rows, fields){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok("berhasil hapus data", res)
+        }
+    });
+}

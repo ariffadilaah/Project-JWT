@@ -15,4 +15,6 @@ module.exports = function(app) {
         .post(jsonku.tambahAliansi);
     app.route('/ubah')
         .put(jsonku.ubahAliansi);
+    app.route('/hapus')
+        .delete(jsonku.hapusAliansi);
 };
