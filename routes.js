@@ -17,4 +17,6 @@ module.exports = function(app) {
         .put(jsonku.ubahAliansi);
     app.route('/hapus')
         .delete(jsonku.hapusAliansi);
+    app.route('/tampilmatakuliah')
+        .get(jsonku.tampilgroupmatakuliah);
 };
