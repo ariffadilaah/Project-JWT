@@ -13,4 +13,6 @@ module.exports = function(app) {
         .get(jsonku.tampilberdasarkanid);
     app.route('/tambah')
         .post(jsonku.tambahAliansi);
+    app.route('/ubah')
+        .put(jsonku.ubahAliansi);
 };
